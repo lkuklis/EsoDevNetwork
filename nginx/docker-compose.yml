@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    networks:
+      eso-dev-network:
+        ipv4_address: 10.10.10.100
+    ports:
+      - "80:80"  # NGINX will be accessible on http://localhost
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro  # Mount the custom NGINX configuration file
+
+networks:
+  eso-dev-network:
+    external: true
+
