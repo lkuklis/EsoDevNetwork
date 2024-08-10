@@ -29,31 +29,31 @@ This PowerShell script allows you to manage entries in your Windows `hosts` file
 
 To add a new entry to the `hosts` file:
 
-\```powershell
+```powershell
 .\Manage-Hosts.ps1 -Action add -IPAddress 127.0.0.1 -Hostname editor.local
-\```
+```
 
 #### Remove an Entry
 
 To remove an entry from the `hosts` file:
 
-\```powershell
+```powershell
 .\Manage-Hosts.ps1 -Action remove -Hostname editor.local
-\```
+```
 
 #### List All Entries
 
 To list all non-commented entries in the `hosts` file:
 
-\```powershell
+```powershell
 .\Manage-Hosts.ps1 -Action list
-\```
+```
 
 ## Script Details
 
 ### Script: `Manage-Hosts.ps1`
 
-\```powershell
+```powershell
 # Main script parameters
 param (
     [string]$Action,
@@ -131,7 +131,7 @@ switch ($Action) {
         Write-Host "Usage: .\Manage-Hosts.ps1 -Action {add|remove|list} [-IPAddress <IP>] [-Hostname <hostname>]"
     }
 }
-\```
+```
 
 ## Common Issues
 
@@ -141,9 +141,9 @@ If you receive an error about the execution policy preventing the script from ru
 
 1. Open PowerShell as Administrator.
 2. Run the following command to allow script execution:
-   \```powershell
+   ```powershell
    Set-ExecutionPolicy RemoteSigned
-   \```
+   ```
 3. Retry running the script.
 
 ### Removing an Entry Removes Entire File
@@ -154,7 +154,7 @@ If the script mistakenly removes all content from the `hosts` file, the issue is
 
 If your `hosts` file is cleared, you can recreate it by pasting the following default content:
 
-\```plaintext
+```plaintext
 # Copyright (c) 1993-2009 Microsoft Corp.
 #
 # This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
@@ -176,7 +176,7 @@ If your `hosts` file is cleared, you can recreate it by pasting the following de
 # localhost name resolution is handled within DNS itself.
 #       127.0.0.1       localhost
 #       ::1             localhost
-\```
+```
 
 ## Conclusion
 
