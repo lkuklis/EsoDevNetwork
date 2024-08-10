@@ -37,7 +37,3 @@ RUN npm install -g badlinks
 RUN curl https://cli-assets.heroku.com/install.sh | sh
 # Switch back to Jenkins user
 USER jenkins
-
-# Pre-install Jenkins plugins (Optional, modify as needed)
-RUN jenkins-plugin-cli --plugins "docker pipeline:1.25 workflow-aggregator:2.6 git:4.11.5"
-

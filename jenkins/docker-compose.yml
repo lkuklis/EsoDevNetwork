@@ -1,7 +1,8 @@
-version: '3.8'
-
 services:
   jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: jenkins/jenkins:lts
     container_name: jenkins
     networks:
